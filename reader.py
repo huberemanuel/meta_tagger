@@ -78,7 +78,7 @@ class Reader(object):
         split = np.array(line.split(u'\t'))
         if len(split) > 4:
           data.append(split[indices])
-        else:
+        elif len(data[-1]) > 0:
           # Avoid splits with one element such as line breaks '\n'.
           data.append(np.array([]))
     return data
